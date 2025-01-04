@@ -1,0 +1,14 @@
+{# templates/inici.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/estilsInici.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h2 id="titolInici">Benvingut a la meua pàgina!</h2>
+    <p id="paragrafInici">Açò és un missatge d'inici.</p>
+    <a href="{{ path('dades_seccions', {'codi': 1}) }}">
+        <img src="{{ asset('assets/img/inici.jpg') }}" class="imatgeInici" alt="Imatge d'inici">
+    </a>
+{% endblock %}

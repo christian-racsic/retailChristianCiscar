@@ -1,0 +1,32 @@
+// src/Controller/SeccionsController.php
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class SeccionsController extends AbstractController
+{
+    /**
+     * @Route("/dades_seccions/{codi}", name="dades_seccions", requirements={"codi"="\d+"})
+     */
+    public function dadesSeccions($codi = null): Response
+    {
+        $equips = [
+            1 => ['nom' => 'Equip 1', 'descripcio' => 'Descripció de l\'Equip 1', 'imatge' => 'equip1.jpg'],
+            2 => ['nom' => 'Equip 2', 'descripcio' => 'Descripció de l\'Equip 2', 'imatge' => 'equip2.jpg'],
+            3 => ['nom' => 'Equip 3', 'descripcio' => 'Descripció de l\'Equip 3', 'imatge' => 'equip3.jpg'],
+        ];
+
+        if (isset($equips[$codi])) {
+            $equip = $equips[$codi];
+        } else {
+            $equip = null;
+        }
+
+        return $this->render('dades_seccio.html.twig', [
+            'equip' => $equip,
+            'codi' => $codi
+        ]);
+    }
+}

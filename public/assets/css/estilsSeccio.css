@@ -1,0 +1,24 @@
+h1#titolSeccio {
+    color: red; /* Pots modificar el color */
+}
+
+.paragrafSeccio {
+    color: blue; /* Pots modificar el color */
+}
+
+.imatgeSeccio {
+    width: 400px;
+    margin: 10px;
+}
+
+.llistaEquips {
+    list-style-type: none;
+    padding: 0;
+}
+
+.llistaEquips li {
+    background-color: lightgrey;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}

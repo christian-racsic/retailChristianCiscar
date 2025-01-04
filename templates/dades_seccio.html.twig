@@ -1,0 +1,21 @@
+{# templates/dades_seccio.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/estilsSeccio.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% if equip %}
+        <h1 id="titolSeccio">{{ equip.nom }}</h1>
+        <p class="paragrafSeccio">{{ equip.descripcio }}</p>
+        <img src="{{ asset('assets/img/' ~ equip.imatge) }}" class="imatgeSeccio" alt="Imatge de l'equip {{ equip.nom }}">
+    {% else %}
+        <h1 id="titolSeccio">Equip No Trobat</h1>
+        <p class="paragrafSeccio">L'equip amb codi {{ codi }} no existeix.</p>
+        <img src="{{ asset('assets/img/no_equip.jpg') }}" class="imatgeSeccio" alt="Imatge d'equip no trobat">
+    {% endif %}
+    <a href="{{ path('inici') }}">
+        <img src="{{ asset('assets/img/back_to_home.jpg') }}" alt="Torna a l'inici">
+    </a>
+{% endblock %}
