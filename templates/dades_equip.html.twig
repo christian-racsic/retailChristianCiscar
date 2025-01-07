@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}Equipos del Gimnasio{% endblock %}
+
+{% block body %}
+{% include 'navegacion.html.twig' %}
+<section>
+<div>
+    <h1 id="titolEquip">Listado de Equipos de Entrenamiento</h1>
+</div>
+
+<div>
+    <p class="paragrafEquip">¡Descubre los mejores equipos y máquinas para alcanzar tus metas fitness!</p>
+</div>
+
+<div id="container-equips">
+    <img src="{{ asset('assets/img/equipos_gym.jpg') }}" alt="Equipos de gimnasio" class="imatgeEquip">
+</div>
+
+<div id="info_equip">
+    {% if equips is defined and equips|length > 0 %}
+        <p>Explora nuestros equipos disponibles:</p>
+        <ul>
+            {% for equip in equips %}
+                <li>
+                    <a href="{{ path('info_equips', {'codi': equip.codi}) }}">
+                        Equipo {{ equip.codi }}: {{ equip.nom }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron equipos en el gimnasio actualmente. ¡Pronto actualizaremos la lista!</p>
+    {% endif %}
+</div>
+
+<div id="enllaç_tornar">
+    <img src="{{ asset('assets/img/inicio_gym.png') }}" alt="Inicio del gimnasio" class="inici">
+    <a href="{{ path('home') }}">Volver al inicio</a>
+</div>
+</section>
+{% endblock %}

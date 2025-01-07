@@ -1,14 +1,26 @@
-{# templates/inici.html.twig #}
 {% extends 'base.html.twig' %}
+{% block title %}FitGym: Gestión de Entrenamiento{% endblock %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/css/estilsInici.css') }}">
-{% endblock %}
+{# {% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+<link href="{{ asset('assets/css/estilosHome.css') }}" rel="stylesheet">
+{% endblock %} #}
 
 {% block body %}
-    <h2 id="titolInici">Benvingut a la meua pàgina!</h2>
-    <p id="paragrafInici">Açò és un missatge d'inici.</p>
-    <a href="{{ path('dades_seccions', {'codi': 1}) }}">
-        <img src="{{ asset('assets/img/inici.jpg') }}" class="imatgeInici" alt="Imatge d'inici">
+{% include 'navegacion.html.twig' %}
+<section>
+<div>
+    <h1 id="titolInici">Bienvenido a FitGym</h1>
+</div>
+
+<div>
+    <p id="paragrafInici">Explora nuestras herramientas de gestión para entrenadores y miembros del gimnasio. Gestiona equipos, horarios y actividades fácilmente.</p>
+</div>
+
+<div id="container-img">
+    <a href="{{ path('info_equips', {'codi': 1}) }}">
+    <img src="{{ asset('assets/img/gym_inicio.jpg') }}" alt="Acceso a información del gimnasio" class="imatgeInici">
     </a>
+</div>
+</section>
 {% endblock %}

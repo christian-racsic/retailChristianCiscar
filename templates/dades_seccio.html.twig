@@ -7,15 +7,18 @@
 
 {% block body %}
     {% if equip %}
-        <h1 id="titolSeccio">{{ equip.nom }}</h1>
-        <p class="paragrafSeccio">{{ equip.descripcio }}</p>
-        <img src="{{ asset('assets/img/' ~ equip.imatge) }}" class="imatgeSeccio" alt="Imatge de l'equip {{ equip.nom }}">
+        <h1 class="titulo-seccio">{{ equip.nom }}</h1>
+        <p class="descripcion-seccio">{{ equip.descripcio }}</p>
+        <img src="{{ asset('assets/img/' ~ equip.imatge) }}" class="imagen-seccio" alt="Imagen del equipo {{ equip.nom }}">
     {% else %}
-        <h1 id="titolSeccio">Equip No Trobat</h1>
-        <p class="paragrafSeccio">L'equip amb codi {{ codi }} no existeix.</p>
-        <img src="{{ asset('assets/img/no_equip.jpg') }}" class="imatgeSeccio" alt="Imatge d'equip no trobat">
+        <h1 class="titulo-seccio">Equipo No Encontrado</h1>
+        <p class="descripcion-seccio">El equipo con código {{ codi }} no está registrado en el sistema.</p>
+        <img src="{{ asset('assets/img/no_equip.jpg') }}" class="imagen-seccio" alt="Imagen de equipo no encontrado">
     {% endif %}
-    <a href="{{ path('inici') }}">
-        <img src="{{ asset('assets/img/back_to_home.jpg') }}" alt="Torna a l'inici">
-    </a>
+    <div class="back-home">
+        <a href="{{ path('inici') }}">
+            <img src="{{ asset('assets/img/back_to_home.jpg') }}" alt="Volver al inicio">
+        </a>
+    </div>
 {% endblock %}
+
