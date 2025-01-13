@@ -5,38 +5,40 @@
 {% include 'navegacion.html.twig' %}
 
 <section>
-<div>
-    <h1 id="titolEquip">Detalles del Equipo de Entrenamiento</h1>
-</div>
+    <div>
+        <h1 id="titolEquip">Detalles del Equipo de Entrenamiento</h1>
+    </div>
 
-<div>
-    <p class="paragrafEquip">Conoce más sobre los equipos que te ayudarán a alcanzar tus objetivos fitness.</p>
-</div>
+    <div>
+        <p class="paragrafEquip">Descubre los equipos especializados que te ayudarán a alcanzar tus objetivos de fitness en nuestro gimnasio.</p>
+    </div>
 
-<div id="container-equips">
-    <img src="{{ asset('assets/img/equipos_gym.jpg') }}" alt="Imagen de equipos del gimnasio" class="imatgeEquip">
-</div>
-<div id="info_equip">
-    {% if equip is defined %}
-        <p><strong>Código:</strong> {{ equip.codi }}</p>
-        <p><strong>Nombre:</strong> {{ equip.nom }}</p>
-        <p><strong>Categoría:</strong> {{ equip.cicle }}</p>
-        <p><strong>Nivel:</strong> {{ equip.curs }}</p>
-        <p><strong>Usuarios:</strong></p>
-        <ul>
-            {% for membre in equip.membres %}
-                <li>{{ membre }}</li>
-            {% endfor %}
-        </ul>
-        <img src="{{ asset('assets/img/' ~ equip.codi ~ '.jpg') }}" alt="Imagen del equipo {{ equip.nom }}" class="imatgeEquip">
-    {% else %}
-        <p>El equipo no se encontró o no es válido. Por favor, selecciona otro equipo de la lista.</p>
-    {% endif %}
-</div>
+    <div id="container-equips">
+        <img src="{{ asset('assets/img/equipos_gym.jpg') }}" alt="Imagen de equipos del gimnasio" class="imatgeEquip">
+    </div>
 
-<div id="enllaç_tornar">
-    <img src="{{ asset('assets/img/inicio_gym.png') }}" alt="Volver al listado de equipos" class="inici">
-    <a href="{{ path('dades_equips') }}">Volver a Equipos</a>
-</div>
+    <div id="info_equip">
+        {% if equip is defined %}
+            <p><strong>Código:</strong> {{ equip.codi }}</p>
+            <p><strong>Nombre:</strong> {{ equip.nom }}</p>
+            <p><strong>Categoría:</strong> {{ equip.categoria }}</p>
+            <p><strong>Nivel:</strong> {{ equip.nivel }}</p>
+            <p><strong>Usuarios:</strong></p>
+            <ul>
+                {% for membre in equip.membres %}
+                    <li>{{ membre }}</li>
+                {% endfor %}
+            </ul>
+            <img src="{{ asset('assets/img/' ~ equip.codi ~ '.jpg') }}" alt="Imagen del equipo {{ equip.nom }}" class="imatgeEquip">
+        {% else %}
+            <p>El equipo no se encontró o no es válido. Por favor, selecciona otro equipo de la lista.</p>
+        {% endif %}
+    </div>
+
+    <div id="enllaç_tornar">
+        <img src="{{ asset('assets/img/inicio_gym.png') }}" alt="Volver al listado de equipos" class="inici">
+        <a href="{{ path('dades_equips') }}">Volver a Equipos</a>
+    </div>
 </section>
 {% endblock %}
+

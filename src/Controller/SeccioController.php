@@ -10,31 +10,31 @@ class SeccioController
     private array $seccions = [
         [
             "codi" => "1",
-            "nom" => "Roba",
-            "descripcio" => "Descripció de la secció",
-            "any" => "2024",
-            "articles" => ["Pantalons", "Camisa", "Jersey", "Xaqueta"]
+            "nom" => "Zona de Fuerza",
+            "descripcio" => "Área equipada con máquinas y pesas libres para el entrenamiento de fuerza.",
+            "any" => "2025",
+            "actividades" => ["Press de banca", "Sentadillas", "Peso muerto", "Dominadas"]
         ],
         [
             "codi" => "2",
-            "nom" => "Tecnologia",
-            "descripcio" => "Secció de dispositius electrònics",
-            "any" => "2024",
-            "articles" => ["Mòbil", "Portàtil", "Tablet"]
+            "nom" => "Zona de Cardio",
+            "descripcio" => "Espacio dedicado al entrenamiento cardiovascular con máquinas modernas.",
+            "any" => "2025",
+            "actividades" => ["Cinta de correr", "Elíptica", "Bicicleta estática", "Remo"]
         ],
         [
             "codi" => "3",
-            "nom" => "Alimentació",
-            "descripcio" => "Secció de productes d'alimentació",
-            "any" => "2024",
-            "articles" => ["Pa", "Llet", "Arròs"]
+            "nom" => "Zona de Estiramientos",
+            "descripcio" => "Espacio diseñado para mejorar la flexibilidad y recuperación muscular.",
+            "any" => "2025",
+            "actividades" => ["Estiramientos guiados", "Yoga", "Pilates"]
         ],
         [
             "codi" => "4",
-            "nom" => "Esports",
-            "descripcio" => "Secció d'articles esportius",
-            "any" => "2024",
-            "articles" => ["Pilota", "Sabates esportives", "Raqueta"]
+            "nom" => "Zona Funcional",
+            "descripcio" => "Área destinada a entrenamientos funcionales y circuitos dinámicos.",
+            "any" => "2025",
+            "actividades" => ["Burpees", "Kettlebell swings", "Box jumps", "Battle ropes"]
         ]
     ];
 
@@ -46,18 +46,18 @@ class SeccioController
         foreach ($this->seccions as $seccio) {
             if ($seccio['codi'] === $codi) {
                 $dades = sprintf(
-                    "Codi: %s<br>Nom: %s<br>Descripció: %s<br>Any: %s<br>Articles: %s",
+                    "Codi: %s<br>Nom: %s<br>Descripció: %s<br>Any: %s<br>Actividades: %s",
                     $seccio['codi'],
                     $seccio['nom'],
                     $seccio['descripcio'],
                     $seccio['any'],
-                    implode(", ", $seccio['articles'])
+                    implode(", ", $seccio['actividades'])
                 );
 
                 return new Response($dades);
             }
         }
 
-        return new Response("No s’ha trobat la secció: $codi");
+        return new Response("No se ha encontrado la sección: $codi");
     }
 }

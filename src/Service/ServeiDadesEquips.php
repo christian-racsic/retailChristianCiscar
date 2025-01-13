@@ -5,31 +5,31 @@ class ServeiDadesEquips {
     private $equips = array(
         array(
             "codi" => "1",
-            "nom" => "Alpha Team",
-            "cicle" => "DAW",
-            "curs" => "2023/24",
-            "membres" => array("Laura", "Pau", "Isabel", "Raul")
+            "nom" => "Power Lifters",
+            "categoria" => "Fuerza",
+            "nivel" => "Avanzado",
+            "membres" => array("Carlos", "María", "Javier", "Ana")
         ),
         array(
             "codi" => "2",
-            "nom" => "Blue Squad",
-            "cicle" => "DAM",
-            "curs" => "2023/24",
-            "membres" => array("Adrian", "Clara", "Jorge", "Lucia")
+            "nom" => "Cardio Champs",
+            "categoria" => "Resistencia",
+            "nivel" => "Intermedio",
+            "membres" => array("Laura", "Pablo", "Claudia", "Tomás")
         ),
         array(
             "codi" => "3",
-            "nom" => "Green Alliance",
-            "cicle" => "ASIX",
-            "curs" => "2023/24",
-            "membres" => array("Mario", "Nerea", "Andres", "Sara")
+            "nom" => "Flex Masters",
+            "categoria" => "Flexibilidad",
+            "nivel" => "Básico",
+            "membres" => array("Sofia", "Diego", "Nuria", "Andrés")
         ),
         array(
             "codi" => "4",
-            "nom" => "Golden Crew",
-            "cicle" => "SMX",
-            "curs" => "2023/24",
-            "membres" => array("Hugo", "Emma", "Mateo", "Sofia")
+            "nom" => "Core Warriors",
+            "categoria" => "Core",
+            "nivel" => "Avanzado",
+            "membres" => array("Hugo", "Carla", "Raúl", "Isabel")
         )
     );
 

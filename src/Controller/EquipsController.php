@@ -26,8 +26,7 @@ class EquipsController extends AbstractController{
     #[Route('/equip/{codi}', name:'info_equips', requirements: ['codi' => '\d+'])]
     public function info_equips($codi, ServeiDadesEquips $serveiDadesEquips){
 
-        $equips = $serveiDadesEquips->get(); // Obtén los equipos utilizando tu servicio
-
+        $equips = $serveiDadesEquips->get();
         $equipSeleccionat = null;
         foreach ($equips as $equip) {
             if($equip['codi'] == $codi) {
